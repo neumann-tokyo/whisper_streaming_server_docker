@@ -1,0 +1,4 @@
+/models/
+!/models/.gitkeep
+
+/kotoba-whisper-v2.2-faster/
