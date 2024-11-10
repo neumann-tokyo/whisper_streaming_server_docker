@@ -1,5 +1,5 @@
 services:
-  server:
+  whisper:
     build: .
     deploy:
       resources:
@@ -10,3 +10,8 @@ services:
               capabilities: [gpu]
     ports:
       - "43001:43001"
+    volumes:
+      - model_data:/models
+
+volumes:
+  model_data:

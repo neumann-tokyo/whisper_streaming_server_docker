@@ -14,4 +14,5 @@ CMD [ "python3", "/whisper_streaming/whisper_online_server.py", \
   "--backend", "faster-whisper", \
   "--min-chunk-size", "5", \
   "--vad", \
+  "--model_cache_dir", "/models", \
   "--model", "medium"]
