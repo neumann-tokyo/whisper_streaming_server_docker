@@ -6,13 +6,16 @@ RUN git clone https://github.com/ufal/whisper_streaming.git
 
 WORKDIR /whisper_streaming
 
+COPY ./initial.wav .
+
 CMD [ "python3", "/whisper_streaming/whisper_online_server.py", \
   "--lan", "ja", \
   "--host", "0.0.0.0", \
   "--port", "43001",  \
+  "--warmup-file", "initial.wav", \
   "--task", "transcribe", \
   "--backend", "faster-whisper", \
-  "--min-chunk-size", "5", \
+  "--min-chunk-size", "1", \
   "--vad", \
   "--model_cache_dir", "/models", \
   "--model", "medium"]
